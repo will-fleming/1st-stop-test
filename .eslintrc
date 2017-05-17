@@ -1,0 +1,56 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+    // "ecmaFeatures": {
+    //   "jsx": true
+    // }
+  },
+  "env": {
+    "node": true,
+    "mocha": true,
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["eslint:recommended"/*, "plugin:react/recommended"*/],
+  // "plugins": [
+  //   "jsx", "react"
+  // ],
+  "rules": {
+    // "jsx/uses-factory": [1, {"pragma": "JSX"}],
+    // "jsx/mark-used-vars": 1,
+    // "jsx/no-undef": 1,
+    // "react/prop-types": 1,
+    "no-console": 0,
+    "space-before-blocks": 1,
+    "arrow-spacing": 1,
+    "keyword-spacing": 1,
+    "space-infix-ops": 1,
+    "space-in-parens": 1,
+    "spaced-comment": 1,
+    "semi": 1,
+    "quotes": ["error", "single"],
+    "no-multiple-empty-lines": 1,
+    // "indent": ["error", 2, { "SwitchCase": "warn" }],
+    "comma-spacing": ["warn", { "before": false, "after": true }],
+    "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+    // "keyword-spacing": ["error", { "before": true, "after": true }],
+    "no-irregular-whitespace": "error",
+    "object-curly-spacing": "error",
+    "no-unreachable": "error",
+    "no-unused-vars": "error",
+    "no-debugger": "error",
+    "eqeqeq": "error"
+    // "react/display-name": "error",
+    // "react/jsx-boolean-value": "error",
+    // "react/jsx-curly-spacing": "error",
+    // "react/jsx-max-props-per-line": ["error", { "maximum": 2, "when": "always" }],
+    // "react/jsx-indent-props": "error",
+    // "react/jsx-no-duplicate-props": "error",
+    // "react/jsx-no-undef": "error",
+    // "react/jsx-uses-react": "error",
+    // "react/jsx-uses-vars": "error",
+    // "react/no-unknown-property": "error",
+    // "react/react-in-jsx-scope": "error"
+  }
+}
