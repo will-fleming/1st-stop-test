@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha ./spec",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "posttest": "npm run lint",
+    "precommit": "npm test"
   },
   "repository": {
     "type": "git",
