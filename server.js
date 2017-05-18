@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use('/api', apiRouter);
 
 app.use('/*', (req, res) => {
-  res.status(404).send({reason: 'ROUTE NOT FOUND'})
+  res.status(404).send({reason: 'ROUTE NOT FOUND'});
 });
 
 app.listen(PORT, () => {
