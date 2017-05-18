@@ -7,6 +7,19 @@ function getAllRawJsonFiles (req, res) {
   });
 }
 
+function addRawJsonFile (req, res) {
+  const newFile = new rawJsonDoc({
+    BACSDocument: req.body.BACSDocument
+  });
+  newFile.save(error => {
+    if (error) return res.status(500).send({error});
+    res.status(201).send({
+      file: newFile
+    });
+  });
+}
+
 module.exports = {
-  getAllRawJsonFiles
+  getAllRawJsonFiles,
+  addRawJsonFile
 };

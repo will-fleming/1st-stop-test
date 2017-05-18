@@ -7,6 +7,7 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/files')
-  .get(rawJsonController.getAllRawJsonFiles);
+  .get(rawJsonController.getAllRawJsonFiles)
+  .post(rawJsonController.addRawJsonFile);
 
 module.exports = router;
