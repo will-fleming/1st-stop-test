@@ -24,6 +24,7 @@
   "homepage": "https://github.com/will-fleming/1st-stop-test#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "bulma": "^0.4.1",
     "express": "^4.15.3",
     "mongoose": "^4.9.9",
     "prop-types": "^15.5.10",

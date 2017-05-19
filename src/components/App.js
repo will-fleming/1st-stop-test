@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import NavBar from './NavBar';
+
 const App = props => {
   return (
     <div>
-      <h1>WOOOOOOOOP</h1>
+      <NavBar/>
       {props.children}
     </div>
   );
