@@ -8,10 +8,10 @@ import {createLogger} from 'redux-logger';
 
 import Main from './components/Main';
 
-// import 'font-awesome/scss/font-awesome.scss';
-// import '../src/styles/styles.scss';
 // import reducer from './reducer/index.reducer';
 
+// import 'font-awesome/scss/font-awesome.scss';
+// import '../src/styles/styles.scss';
 
 // const logger = createLogger();
 // const store = createStore(reducer, applyMiddleware(thunk, logger));

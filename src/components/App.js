@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Main = props => {
+const App = props => {
   return (
     <div>
       <h1>WOOOOOOOOP</h1>
@@ -10,8 +10,8 @@ const Main = props => {
   );
 };
 
-Main.propTypes = {
+App.propTypes = {
   children: PropTypes.node
 };
 
-export default Main;
+export default App;
