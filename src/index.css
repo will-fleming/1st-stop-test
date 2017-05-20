@@ -8,3 +8,10 @@ body {
   padding: 0;
   user-select: none;
 }
+
+.centre-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
