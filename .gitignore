@@ -2,3 +2,7 @@
 node_modules/*
 .DS_Store
 testJSON/*
+**/bundle.js
+**/bundle.js.map
+**/*.map.*
+**/public/styles/*
