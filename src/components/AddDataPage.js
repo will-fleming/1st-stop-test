@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {addFile} from '../actions/file.actions';
 
 class AddDataPage extends Component {
   constructor (props) {
@@ -68,4 +71,23 @@ class AddDataPage extends Component {
   }
 }
 
-export default AddDataPage;
+function mapStateToProps (state) {
+  return {
+    loading: state.files.loading
+  };
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    addFile: (file) => {
+      dispatch(addFile(file));
+    }
+  };
+}
+
+AddDataPage.propTypes = {
+  loading: PropTypes.bool,
+  addFile: PropTypes.func
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddDataPage);

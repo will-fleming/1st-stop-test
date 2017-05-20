@@ -2,12 +2,8 @@ import * as types from './types';
 import axios from 'axios';
 import {ROOT} from '../../config';
 
-export function addFile (errors, data) {
+export function addFile (data) {
   return function (dispatch) {
-    if (errors.length) {
-      dispatch(addFileError(errors));
-      return;
-    }
     dispatch(addFileRequest());
     axios
       .post(`${ROOT}/file`, {
