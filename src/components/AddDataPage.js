@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {addFile} from '../actions/file.actions';
 
+import parseDirectoryToJson from '../lib/xml-to-json';
+
 class AddDataPage extends Component {
   constructor (props) {
     super(props);
@@ -12,6 +14,7 @@ class AddDataPage extends Component {
     };
     this.updateInputDir = this.updateInputDir.bind(this);
     this.updateOutputDir = this.updateOutputDir.bind(this);
+    this.handleParse = this.handleParse.bind(this);
   }
 
   updateInputDir (event) {
@@ -23,6 +26,14 @@ class AddDataPage extends Component {
   updateOutputDir (event) {
     this.setState({
       outputDir: event.target.value
+    });
+  }
+
+  handleParse () {
+    const inDir = this.state.inputDir;
+    const outDir = this.state.outputDir;
+    parseDirectoryToJson(inDir, outDir).forEach(file => {
+      this.props.addFile(file);
     });
   }
 
@@ -60,7 +71,7 @@ class AddDataPage extends Component {
           <div className='section centre-content'>
             <div className='field'>
               <p className='control'>
-                <button className='button is-primary is-large'>Parse!</button>
+                <button onClick={this.handleParse} className='button is-primary is-large'>Parse!</button>
               </p>
             </div>
           </div>
@@ -88,6 +99,6 @@ function mapDispatchToProps (dispatch) {
 AddDataPage.propTypes = {
   loading: PropTypes.bool,
   addFile: PropTypes.func
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddDataPage);

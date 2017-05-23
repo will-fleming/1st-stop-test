@@ -6,7 +6,7 @@ export function addFile (data) {
   return function (dispatch) {
     dispatch(addFileRequest());
     axios
-      .post(`${ROOT}/file`, {
+      .post(`${ROOT}/files`, {
         BACSDocument: data
       })
       .then(res => {
