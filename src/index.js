@@ -11,18 +11,16 @@ import AddDataPage from './components/AddDataPage';
 import ViewDataPage from './components/ViewDataPage';
 import ViewRdiPage from './components/ViewRdiPage';
 
-// import reducer from './reducer/index.reducer';
+import reducer from './reducers/index.reducer';
 
-// import 'font-awesome/scss/font-awesome.scss';
-// import '../src/styles/styles.scss';
 import './index.css';
 import 'bulma/css/bulma.css';
 
-// const logger = createLogger();
-// const store = createStore(reducer, applyMiddleware(thunk, logger));
+const logger = createLogger();
+const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render((
-  // <Provider store={store}>
+  <Provider store={store}>
   <Router history={hashHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={AddDataPage}/>
@@ -31,5 +29,5 @@ ReactDOM.render((
       <Route path='/viewRdi' component={ViewRdiPage}/>
     </Route>
   </Router>
-  // </Provider>
+  </Provider>
 ), document.getElementById('root'));

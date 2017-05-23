@@ -31,5 +31,6 @@ module.exports = {
         loader: 'url-loader'
       }
     ]
-  }
+  },
+  target: 'node'
 };

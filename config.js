@@ -6,5 +6,6 @@ module.exports = {
   PORT: {
     test: 9001,
     dev: 9000
-  }
+  },
+  ROOT: 'http://localhost:9000/api'
 };
