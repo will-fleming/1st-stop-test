@@ -4,4 +4,4 @@ const ADD_FILE_ERROR = 'ADD_FILE_ERROR';
 
 module.exports = {
   ADD_FILE_REQUEST, ADD_FILE_SUCCESS, ADD_FILE_ERROR
-}
+};
