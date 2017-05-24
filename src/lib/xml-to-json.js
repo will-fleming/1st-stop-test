@@ -16,7 +16,7 @@ function parseDirectory2Json (sourceDir, targetDir) {
   
     jsonToUpload.push(json);
     file = file.replace('.xml', '.json');
-    fs.writeFileSync(targetDir + file, JSON.stringify(json));
+    fs.writeFileSync(targetDir + file, JSON.stringify(json, null, 2));
   });
 
   return jsonToUpload;
