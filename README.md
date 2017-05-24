@@ -24,6 +24,18 @@ Finally the app can be launched from a fourth terminal
 
 `$ npm run dev`
 
+## Using the app
+
+Make sure the paths to the directories look as follows...
+
+`/path/to/directory/`
+
+For example, If i had my input and output folders on my Desktop (linux)
+
+`/home/william/Desktop/input/`
+
+There is a folder with some example xml files located in the repo if needed, though I recommend creating an input and output folder on the Desktop (it results in less typing).
+
 ## Running tests
 
 Ensure you have installed all dependencies
