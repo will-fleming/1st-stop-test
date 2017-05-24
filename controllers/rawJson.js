@@ -8,11 +8,17 @@ function getAllRawJsonFiles (req, res) {
 }
 
 function addRawJsonFile (req, res) {
+  console.log('************************')
+  console.log(req.body);
+  console.log('************************')
   const newFile = new rawJsonDoc({
     BACSDocument: req.body.BACSDocument
   });
   newFile.save(error => {
-    if (error) return res.status(500).send({error});
+    if (error) {
+      console.log(error);
+      return res.status(500).send({error});
+    }
     res.status(201).send({
       file: newFile
     });

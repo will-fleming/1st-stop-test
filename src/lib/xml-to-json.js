@@ -6,19 +6,19 @@ function parseDirectory2Json (sourceDir, targetDir) {
   const sourceFiles = fs.readdirSync(sourceDir);
   
   sourceFiles.forEach((file) => {
-    const parser = new xml2js.Parser();
+    const parser = new xml2js.Parser({attrkey: 'attr'});
     const xml = fs.readFileSync(sourceDir + file);
   
     let json;
     parser.parseString(xml, (err, result) => {
-      json = JSON.stringify(result);
+      json = result.BACSDocument;
     });
   
     jsonToUpload.push(json);
     file = file.replace('.xml', '.json');
-    fs.writeFileSync(targetDir + file, json);
+    fs.writeFileSync(targetDir + file, JSON.stringify(json));
   });
-  
+
   return jsonToUpload;
 }
 
