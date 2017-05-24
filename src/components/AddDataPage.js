@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {addFile} from '../actions/file.actions';
+import {addRdi} from '../actions/rdi.actions';
 
 import parseDirectoryToJson from '../lib/xml-to-json';
 
@@ -34,6 +35,9 @@ class AddDataPage extends Component {
     const outDir = this.state.outputDir;
     parseDirectoryToJson(inDir, outDir).forEach(file => {
       this.props.addFile(file);
+      file.Data.ARUDD.Advice.OriginatingAccountRecords.OriginatingAccountRecord.ReturnedDebitItem.forEach(rdi => {
+        this.props.addRdi(rdi);
+      });
     });
   }
 
@@ -84,7 +88,8 @@ class AddDataPage extends Component {
 
 function mapStateToProps (state) {
   return {
-    loading: state.files.loading
+    fileProccessing: state.files.loading,
+    rdiProcessing: state.rdis.loading
   };
 }
 
@@ -92,13 +97,18 @@ function mapDispatchToProps (dispatch) {
   return {
     addFile: (file) => {
       dispatch(addFile(file));
+    },
+    addRdi: (rdi) => {
+      dispatch(addRdi(rdi));
     }
   };
 }
 
 AddDataPage.propTypes = {
-  loading: PropTypes.bool,
-  addFile: PropTypes.func
+  fileProccessing: PropTypes.bool,
+  rdiProcessing: PropTypes.bool,
+  addFile: PropTypes.func,
+  addRdi: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddDataPage);

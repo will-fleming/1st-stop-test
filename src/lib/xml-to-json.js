@@ -6,7 +6,7 @@ function parseDirectory2Json (sourceDir, targetDir) {
   const sourceFiles = fs.readdirSync(sourceDir);
   
   sourceFiles.forEach((file) => {
-    const parser = new xml2js.Parser({attrkey: 'attr'});
+    const parser = new xml2js.Parser({attrkey: 'attr', explicitArray: false});
     const xml = fs.readFileSync(sourceDir + file);
   
     let json;

@@ -6,7 +6,7 @@ export function addRdi (data) {
   return function (dispatch) {
     dispatch(addRdiRequest());
     axios
-      .post(`${ROOT}/rdi`, {
+      .post(`${ROOT}/returnedDebitItems`, {
         ReturnedDebitItem: data
       })
       .then(res => {
