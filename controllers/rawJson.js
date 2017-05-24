@@ -8,9 +8,6 @@ function getAllRawJsonFiles (req, res) {
 }
 
 function addRawJsonFile (req, res) {
-  console.log('************************')
-  console.log(req.body);
-  console.log('************************')
   const newFile = new rawJsonDoc({
     BACSDocument: req.body.BACSDocument
   });
