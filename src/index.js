@@ -8,7 +8,6 @@ import {createLogger} from 'redux-logger';
 
 import App from './components/App';
 import AddDataPage from './components/AddDataPage';
-import ViewDataPage from './components/ViewDataPage';
 import ViewRdiPage from './components/ViewRdiPage';
 
 import reducer from './reducers/index.reducer';
@@ -25,7 +24,6 @@ ReactDOM.render((
     <Route path='/' component={App}>
       <IndexRoute component={AddDataPage}/>
       <Route path='/addData' component={AddDataPage}/>
-      <Route path='/viewData' component={ViewDataPage}/>
       <Route path='/viewRdi' component={ViewRdiPage}/>
     </Route>
   </Router>

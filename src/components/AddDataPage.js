@@ -75,9 +75,14 @@ class AddDataPage extends Component {
           <div className='section centre-content'>
             <div className='field'>
               <p className='control'>
-                <button onClick={this.handleParse} className='button is-primary is-large'>Parse!</button>
+                <button 
+                    onClick={this.handleParse} 
+                    className={this.props.fileProccessing || this.props.rdiProcessing ? 'button is-primary is-large is-loading' : 'button is-primary is-large'}>Parse!
+                </button>
               </p>
             </div>
+
+            
           </div>
 
         </div>

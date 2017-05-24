@@ -9,9 +9,6 @@ const NavBar = () => {
           <Link className='nav-item is-tab is-active' to='/addData'>
             Add Data
           </Link>
-          <Link className='nav-item is-tab' to='/viewData'>
-            View Json
-          </Link>
           <Link className='nav-item is-tab' to='/viewRdi'>
             View Returned Debit Items
           </Link>
