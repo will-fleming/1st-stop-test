@@ -8,6 +8,8 @@ A loading spinner is displayed while the files are being parsed.
 
 ## Running the app
 
+`$ npm install`
+
 The app requires that you are running a mongoDB database alongside it. Make sure you have mongo installed on your system and run it in a terminal.
 
 `$ mongod`
