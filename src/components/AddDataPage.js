@@ -5,13 +5,17 @@ import {addFile} from '../actions/file.actions';
 import {addRdi} from '../actions/rdi.actions';
 
 import parseDirectoryToJson from '../lib/xml-to-json';
+import fs from 'fs';
+
+import Error from './Error';
 
 class AddDataPage extends Component {
   constructor (props) {
     super(props);
     this.state = {
       inputDir: '',
-      outputDir: ''
+      outputDir: '',
+      error: false
     };
     this.updateInputDir = this.updateInputDir.bind(this);
     this.updateOutputDir = this.updateOutputDir.bind(this);
@@ -33,12 +37,23 @@ class AddDataPage extends Component {
   handleParse () {
     const inDir = this.state.inputDir;
     const outDir = this.state.outputDir;
-    parseDirectoryToJson(inDir, outDir).forEach(file => {
-      this.props.addFile(file);
-      file.Data.ARUDD.Advice.OriginatingAccountRecords.OriginatingAccountRecord.ReturnedDebitItem.forEach(rdi => {
-        this.props.addRdi(rdi);
+
+    if (fs.existsSync(inDir) && fs.existsSync(outDir)) {
+      this.setState({
+        error: false
       });
-    });
+
+      parseDirectoryToJson(inDir, outDir).forEach(file => {
+        this.props.addFile(file);
+        file.Data.ARUDD.Advice.OriginatingAccountRecords.OriginatingAccountRecord.ReturnedDebitItem.forEach(rdi => {
+          this.props.addRdi(rdi);
+        });
+      });
+    } else {
+      this.setState({
+        error: true
+      });
+    }
   }
 
   render () {
@@ -82,7 +97,7 @@ class AddDataPage extends Component {
               </p>
             </div>
 
-            
+            <Error error={this.state.error}/>
           </div>
 
         </div>

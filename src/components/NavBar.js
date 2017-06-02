@@ -6,7 +6,7 @@ const NavBar = () => {
     <div>
       <nav className='nav has-shadow'>
         <div className='container'>
-          <Link className='nav-item is-tab is-active' to='/addData'>
+          <Link className='nav-item is-tab' to='/addData'>
             Add Data
           </Link>
           <Link className='nav-item is-tab' to='/viewRdi'>
